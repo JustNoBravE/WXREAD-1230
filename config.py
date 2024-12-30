@@ -23,7 +23,7 @@ PUSH_METHOD = os.getenv('PUSH_METHOD', 'email')  # 默认使用 email 推送方�
 
 
 # 阅读次数 默认120次/60分钟
-READ_NUM = int(os.getenv('READ_NUM', '120'))
+READ_NUM = int(os.getenv('READ_NUM', '2'))
 
 # 复制的curl_bath命令
 curl_str = os.getenv('WXREAD_CURL')
