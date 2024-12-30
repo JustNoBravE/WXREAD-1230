@@ -29,8 +29,51 @@ READ_NUM = int(os.getenv('READ_NUM', '120'))
 curl_str = os.getenv('WXREAD_CURL')
 
 # 初始化headers和cookies字典
-headers = {}
-cookies = {}
+cookies = {
+    'pac_uid': '0_0c7dc76933357',
+    'iip': '0',
+    '_qimei_uuid42': '184170f260a100c761caea05ee40b0962cabc59681',
+    '_qimei_q36': '',
+    '_qimei_h38': '24b1969561caea05ee40b09602000004d18417',
+    'wr_gid': '296444248',
+    'wr_pf': '0',
+    'wr_localvid': 'b49320808106fa6a8b49ca6',
+    'wr_name': '%E6%B8%B8%E9%BE%99',
+    'wr_gender': '1',
+    '_clck': 'zq4pnj|1|fmw|0',
+    'suid': 'user_0_0c7dc76933357',
+    'pgv_pvid': '3904711160',
+    'RK': 'Y28p1Uo3nZ',
+    'ptcz': 'd4ae0de5f7e34c0fa739c35b47638e7b8ad33e13c32964233b66ebff78b7abc1',
+    'wr_vid': '275752616',
+    'wr_rt': 'web%40qAC2602vcB8SNydPTZs_AL',
+    'wr_avatar': 'https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FZ6uRYmvbnrqpDmwAlnkWBDQOvic7M3M93ykvbiaTA70XzSDXulm1xMMudyoHPb5hruMA7p7bgkYOaiaG3JZaDQLQH2X82uteTsHEVUD6Ib5GmE%2F132',
+    'wr_fp': '1296956703',
+    '_qimei_fingerprint': 'f070808fc45d2ba9d06a87b3707fb583',
+    'wr_theme': 'white',
+    'wr_skey': 'Z7HcF7gz',
+}
+
+headers = {
+    'accept': 'application/json, text/plain, */*',
+    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+    'baggage': 'sentry-environment=production,sentry-release=dev-1730698697208,sentry-public_key=ed67ed71f7804a038e898ba54bd66e44,sentry-trace_id=fe24dd1dc4de48158773d7eb798d2bf0',
+    'content-type': 'application/json;charset=UTF-8',
+    # 'cookie': 'pac_uid=0_0c7dc76933357; iip=0; _qimei_uuid42=184170f260a100c761caea05ee40b0962cabc59681; _qimei_q36=; _qimei_h38=24b1969561caea05ee40b09602000004d18417; wr_gid=296444248; wr_pf=0; wr_localvid=b49320808106fa6a8b49ca6; wr_name=%E6%B8%B8%E9%BE%99; wr_gender=1; _clck=zq4pnj|1|fmw|0; suid=user_0_0c7dc76933357; pgv_pvid=3904711160; RK=Y28p1Uo3nZ; ptcz=d4ae0de5f7e34c0fa739c35b47638e7b8ad33e13c32964233b66ebff78b7abc1; wr_vid=275752616; wr_rt=web%40qAC2602vcB8SNydPTZs_AL; wr_avatar=https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FZ6uRYmvbnrqpDmwAlnkWBDQOvic7M3M93ykvbiaTA70XzSDXulm1xMMudyoHPb5hruMA7p7bgkYOaiaG3JZaDQLQH2X82uteTsHEVUD6Ib5GmE%2F132; wr_fp=1296956703; _qimei_fingerprint=f070808fc45d2ba9d06a87b3707fb583; wr_theme=white; wr_skey=Z7HcF7gz',
+    'dnt': '1',
+    'origin': 'https://weread.qq.com',
+    'priority': 'u=1, i',
+    'referer': 'https://weread.qq.com/web/reader/ce032b305a9bc1ce0b0dd2ake2c32140247e2c420d92577',
+    'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'sec-gpc': '1',
+    'sentry-trace': 'fe24dd1dc4de48158773d7eb798d2bf0-98cb4de511e214e7',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
+}
 
 # 如果curl_str存在，则提取headers和cookies
 if curl_str:
