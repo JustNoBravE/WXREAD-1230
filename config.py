@@ -19,6 +19,9 @@ EMAIL_USER = 'jyh8888@88.com'  # 发件人邮箱地址
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')  # 从环境变量获取密码
 EMAIL_RECIPIENT = 'jyh8888@88.com'  # 收件人邮箱地址
 
+PUSH_METHOD = os.getenv('PUSH_METHOD', 'email')  # 默认使用 email 推送方法
+
+
 # 阅读次数 默认120次/60分钟
 READ_NUM = int(os.getenv('READ_NUM', '120'))
 
