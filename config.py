@@ -14,7 +14,7 @@ GitHub Action部署或本地部署
 
 
 # 阅读次数 默认120次/60分钟
-READ_NUM = int(os.getenv('READ_NUM', '2'))
+READ_NUM = int(os.getenv('READ_NUM', '60'))
 
 # 复制的curl_bath命令
 curl_str = os.getenv('WXREAD_CURL')
