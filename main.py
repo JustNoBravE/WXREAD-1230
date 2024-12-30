@@ -7,7 +7,7 @@ import logging
 import hashlib
 import requests
 import urllib.parse
-from config import data, headers, cookies, READ_NUM,
+from config import data, headers, cookies, READ_NUM
 
 # 配置日志格式
 logger = logging.getLogger(__name__)
