@@ -75,18 +75,16 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
 }
 
-# 如果curl_str存在，则提取headers和cookies
-if curl_str:
-    headers, cookies = convert(curl_str)
+
 
 def convert(curl_command):
     """提取headers与cookies"""
-    global headers, cookies
     # 提取 headers
     for match in re.findall(r"-H '([^:]+): ([^']+)'", curl_command):
         headers[match[0]] = match[1]
 
     # 提取 cookies
+    cookies = {}
     cookie_string = headers.pop('cookie', '')
     for cookie in cookie_string.split('; '):
         key, value = cookie.split('=', 1)
@@ -94,7 +92,5 @@ def convert(curl_command):
 
     return headers, cookies
 
-# 其他配置（如data等）保持不变
-data = {
-    # ... 数据保持不变
-}
+
+headers, cookies = convert(curl_str) if curl_str else (headers, cookies)
