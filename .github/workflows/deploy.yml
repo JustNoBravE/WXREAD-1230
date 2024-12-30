@@ -3,7 +3,7 @@ name: Deploy Python Application
 on:
   push:
     branches:
-      - main  # 或者你想要触发部署的分支名
+      - main
   schedule:
     - cron: "0 5 * * *"  # 每天北京时间下午1点（UTC+8）执行
 

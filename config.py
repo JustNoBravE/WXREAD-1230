@@ -16,7 +16,7 @@ GitHub Action部署或本地部署
 EMAIL_HOST = 'pop.88.com'  # SMTP服务器地址
 EMAIL_PORT = 995  # SSL端口
 EMAIL_USER = 'jyh8888@88.com'  # 发件人邮箱地址
-# EMAIL_PASSWORD 将通过 GitHub Secrets 提供
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')  # 从环境变量获取密码
 EMAIL_RECIPIENT = 'jyh8888@88.com'  # 收件人邮箱地址
 
 # 阅读次数 默认120次/60分钟
