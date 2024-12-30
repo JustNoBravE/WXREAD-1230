@@ -12,15 +12,6 @@ GitHub Action部署或本地部署
 从环境变量获取值,如果不存在使用默认本地值
 """
 
-# 邮件推送配置
-EMAIL_HOST = 'smtp.email.cn'  # Titan 邮箱 SMTP 地址
-EMAIL_PORT = 465  # SMTP SSL 端口
-EMAIL_USER = 'jyh@Titan.email.cn'  # 发件邮箱地址
-EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')  # 使用环境变量加载密码或授权码
-EMAIL_RECIPIENT = 'jyh8888@88.com'  # 接收邮箱地址
-
-PUSH_METHOD = os.getenv('PUSH_METHOD', 'email')  # 默认使用 email 推送方法
-
 
 # 阅读次数 默认120次/60分钟
 READ_NUM = int(os.getenv('READ_NUM', '2'))
