@@ -18,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'  # 你可以根据需要更改 Python 版本
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
@@ -29,4 +29,6 @@ jobs:
       run: python main.py
 
     - name: Run push.py
+      env:
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}  # 引用 GitHub Secret
       run: python push.py

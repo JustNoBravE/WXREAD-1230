@@ -1,22 +1,22 @@
 # config.py 自定义配置
+
 import os
 import re
 
 """
-github action部署或本地部署
+GitHub Action部署或本地部署
 从环境变量获取值,如果不存在使用默认本地值
-每一次代表30秒，比如你想刷1个小时这里填120，你只需要签到这里填2次
 """
+
+# 邮件推送配置
+EMAIL_HOST = 'pop.88.com'  # SMTP服务器地址
+EMAIL_PORT = 995  # SSL端口
+EMAIL_USER = 'jyh8888@88.com'  # 发件人邮箱地址
+# EMAIL_PASSWORD 将通过 GitHub Secrets 提供
+EMAIL_RECIPIENT = 'jyh8888@88.com'  # 收件人邮箱地址
 
 # 阅读次数 默认120次/60分钟
 READ_NUM = int(os.getenv('READ_NUM', '120'))
-# pushplus or telegram
-PUSH_METHOD = "" or os.getenv('PUSH_METHOD')
-# push-plus
-PUSHPLUS_TOKEN = "" or os.getenv("PUSHPLUS_TOKEN")
-# telegram
-TELEGRAM_BOT_TOKEN = "" or os.getenv("TELEGRAM_BOT_TOKEN")
-TELEGRAM_CHAT_ID = "" or os.getenv("TELEGRAM_CHAT_ID")
 # 复制的curl_bath命令
 curl_str = os.getenv('WXREAD_CURL')
 
@@ -85,7 +85,6 @@ data = {
     "pc": "080327b07a4c3259g018787",
 }
 
-
 def convert(curl_command):
     """提取headers与cookies"""
     # 提取 headers
@@ -101,5 +100,6 @@ def convert(curl_command):
 
     return headers, cookies
 
-
-headers, cookies = convert(curl_str) if curl_str else (headers, cookies)
+# 如果没有curl_str，则不执行convert函数
+if 'curl_str' in locals():
+    headers, cookies = convert(curl_str)
