@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 4 * * *"  # 每天北京时间下午2点（UTC+8）执行
+    - cron: "0 8 * * *"  # 每天北京时间下午4点（UTC+8）执行
 
 jobs:
   deploy:
